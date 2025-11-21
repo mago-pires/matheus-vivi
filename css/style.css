@@ -1,0 +1,66 @@
+/* Fontes */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.fonte-destaque {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Fundo Degradê Romântico (Rosa e Vermelho Suave) */
+.bg-romantico {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animação dos Corações Flutuantes */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar nos botões através dos corações */
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -10vh;
+    color: rgba(255, 255, 255, 0.6);
+    animation: floatUp linear forwards;
+    font-size: 20px;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+/* Estilo dos Cards */
+.card-memoria {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.card-memoria:hover {
+    transform: translateY(-10px);
+}
+.card-img-top {
+    height: 250px;
+    object-fit: cover; /* Garante que a foto não estique */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 117, 140, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 117, 140, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 117, 140, 0); }
+}
